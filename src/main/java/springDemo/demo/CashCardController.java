@@ -36,13 +36,14 @@ public class CashCardController {
 //    public Iterable<CashCard> findAll() {
 //       return cashCardRepository.findAll();
 //    }
-    public ResponseEntity<Iterable<CashCard>> findAll(SpringDataWebProperties.Pageable pageable) {
-        Page<CashCard> page = cashCardRepository.findAll(
-                PageRequest.of(
-                        pageable.getPageNumber(),
-                        pageable.getPageSize(),
-                        pageable.getSortOr(Sort.by(Sort.Direction.DESC, "amount"))));
-        return ResponseEntity.ok(page.getContent());    }
+//    public ResponseEntity<Iterable<CashCard>> findAll(SpringDataWebProperties.Pageable pageable) {
+//        Page<CashCard> page = cashCardRepository.findAll(
+//                PageRequest.of(
+//                        pageable.getPageNumber(),
+//                        pageable.getPageSize(),
+//                        pageable.getSortOr(Sort.by(Sort.Direction.DESC, "amount"))));
+//        return ResponseEntity.ok(page.getContent());
+//    }
 
     @PostMapping
     private ResponseEntity<Void> createCashCard(@RequestBody CashCard newCashCardRequest, UriComponentsBuilder ucb) {
